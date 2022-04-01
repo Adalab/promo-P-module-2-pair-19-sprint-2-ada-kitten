@@ -89,8 +89,18 @@ function addNewKitten(event) {
         labelMesageError.innerHTML = "Debe rellenar todos los valores";
     } else {
         if (valueDesc !== "" && valuePhoto !== "" && valueName !== "") {
-            labelMesageError.innerHTML = "";
+            labelMesageError.innerHTML = "Mola! Un nuevo gatito en Adalab!";
         }
+
+        const newKittenDataObject = {
+            image: inputPhoto.value ,
+            name: inputName.value,
+            desc: inputDesc.value,
+        };
+
+        kittenDataList.push(newKittenDataObject);
+
+        renderKittenList(kittenDataList)
     }
 }
 //Cancelar la búsqueda de un gatito
